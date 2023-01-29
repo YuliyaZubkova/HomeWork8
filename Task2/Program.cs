@@ -45,33 +45,34 @@ void PrintMatrix(int[,] matrix)
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
-            if (matrix.GetLength(0) == matrix.GetLength(1))
             {
                 Console.Write($"{matrix[i, j]} ");
-            }
-        Console.WriteLine();
+            } 
+            Console.WriteLine();
     }
 }
 
 //Замена строк на столбцы
 void PrintNewMatrix(int[,] matrix)
 {
-    if (matrix.GetLength(0) != matrix.GetLength(1))
-    {
-        Console.WriteLine($"Замена невозможна, так как введено разное количество строк и столбцов.");
-    }
-    else
-    {
-        for (int i = 0; i < matrix.GetLength(0); i++)
+    //if (matrix.GetLength(0) != matrix.GetLength(1))
+    //{
+      //  Console.WriteLine($"Замена невозможна, так как введено разное количество строк и столбцов.");
+    //}
+    //else
+    //{
+        int [,] arrayreverse = new int[matrix.GetLength(1), matrix.GetLength(0)];
+        for (int i = 0; i < arrayreverse.GetLength(0); i++)
         {
-            for (int j = 0; j < matrix.GetLength(1); j++)
-            {
-                Console.Write($"{matrix[j, i]} ");
+            for (int j = 0; j < arrayreverse.GetLength(1); j++)
+            { 
+                arrayreverse[i,j] = matrix[j,i];
+                Console.Write($"{arrayreverse[i,j]} ");
+
             }
             Console.WriteLine();
         }
     }
-}
 
 
 int m = GetNumber("Введите количество строк: ");
