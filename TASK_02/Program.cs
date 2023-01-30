@@ -21,8 +21,6 @@ int DeleteSecond(int number)
     return res;
 }
 
-
-
 int number = GetNumber();
 Console.Write($"Заданное число: {number}");
 int res = DeleteSecond(number);
