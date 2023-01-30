@@ -24,7 +24,27 @@ namespace ConsoleApp1
                 return array;
             }
 
-            Min(array);
+            (int, int) Min(int[,] array)
+            {
+                int min = array[0, 0];
+                int minRow = 0;
+                int minColumn = 0;
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    for (int j = 0; j < array.GetLength(1); j++)
+                    {
+                    if(array[i,j] < min)
+                    {
+                        min = array[i, j];
+                        minRow = i;
+                        minColumn = j;
+                    }
+                    }
+                    
+                }
+                return (minRow, minColumn);
+            }
+            
 
             int[,] Delete(int[,] array, int minRow, int minColumn)
             {
@@ -56,7 +76,7 @@ namespace ConsoleApp1
                 {
                     for (int j = 0; j < array.GetLength(1); j++)
                     {
-                        Console.Write($"{array[i, j]}");
+                        Console.Write($"{array[i, j]}  ");
                     }
                     Console.WriteLine();
                 }
@@ -66,7 +86,7 @@ namespace ConsoleApp1
             int[,] array = InitArray(3, 4);
             PrintArray(array);
             (int a, int b) = Min(array);
-            PrintArray(Delegate(array, a, b));
+            PrintArray(Delete(array, a, b));
             Console.ReadKey();
         }
     }
