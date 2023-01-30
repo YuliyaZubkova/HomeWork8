@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿/* See https://aka.ms/new-console-template for more information
 
 Напишите программу, которая выводит случайное число из отрезка [10, 99] и показывает наибольшую цифру числа.
 
@@ -33,3 +33,4 @@ int number = GetNumber();
 Console.WriteLine($"сгенерированное число:{number}");
 int maxDigit = GetMaxDigitOfNumber(number);
 Console.WriteLine($"максимальная цифра числа {number} = {maxDigit}");
+
